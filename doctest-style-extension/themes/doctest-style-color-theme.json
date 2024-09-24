@@ -1,0 +1,57 @@
+{
+    "name": "Doctest with style",
+    "colors": {},
+    "tokenColors": [
+      {
+        "scope": "text.plain",
+        "settings": {
+          "foreground": "#FFFFFF"
+        }
+      },
+      {
+        "scope": "text.plain markup.bold",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "text.plain markup.italic",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "text.plain comment",
+        "settings": {
+          "foreground": "#6A9955"
+        }
+      },
+      {
+        "scope": "text.plain markup.heading.1",
+        "settings": {
+          "foreground": "#6A9955",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "text.plain markup.heading.2",
+        "settings": {
+          "foreground": "#6A9955",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "text.plain markup.heading.3",
+        "settings": {
+          "foreground": "#6A9955",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "text.plain keyword.other.error",
+        "settings": {
+          "foreground": "#F44747"
+        }
+      }
+    ]
+  }

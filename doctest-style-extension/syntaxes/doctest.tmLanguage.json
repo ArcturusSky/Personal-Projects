@@ -1,0 +1,47 @@
+{
+    "scopeName": "text.plain.doctest",
+    "name": "Doctest with style",
+    "fileTypes": ["txt"],
+   "patterns": [
+    {
+      "match": "\\*\\*(.+?)\\*\\*",
+      "captures": {
+        "1": {"name": "markup.bold"}
+      }
+    },
+    {
+      "match": "\\*(.+?)\\*",
+      "captures": {
+        "1": {"name": "markup.italic"}
+      }
+    },
+    {
+      "match": "^#\\s+#\\s+(.+)$",
+      "captures": {
+        "1": {"name": "markup.heading.1"}
+      }
+    },
+    {
+      "match": "^#\\s+##\\s+(.+)$",
+      "captures": {
+        "1": {"name": "markup.heading.2"}
+      }
+    },
+    {
+      "match": "^#\\s+###\\s+(.+)$",
+      "captures": {
+        "1": {"name": "markup.heading.3"}
+      }
+    },
+    {
+      "match": "^#\\s+(.+)$",
+      "captures": {
+        "1": {"name": "comment"}
+      }
+    },
+    {
+      "match": "\\b\\w*error\\w*\\b",
+      "name": "keyword.other.error"
+    }
+  ]
+}

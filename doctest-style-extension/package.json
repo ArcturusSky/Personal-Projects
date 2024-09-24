@@ -1,0 +1,30 @@
+{
+    "name": "doctest-style-extension",
+    "displayName": "Doctest Style Extension",
+    "description": "My Own Colors for doctest files",
+    "version": "0.0.1",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ArcturusSky/doctest-style-extension.git"
+    },
+    "categories": [
+      "Programming Languages"
+    ],
+    "contributes": {
+      "languages": [{
+        "id": "doctest",
+        "aliases": ["Doctest", "doctest"],
+        "extensions": [".txt"]
+      }],
+      "grammars": [{
+        "language": "doctest",
+        "scopeName": "text.plain.doctest",
+        "path": "./syntaxes/doctest.tmLanguage.json"
+      }],
+      "themes": [{
+        "label": "Doctest with Style",
+        "uiTheme": "vs-dark",
+        "path": "./themes/doctest-style-color-theme.json"
+      }]
+    }
+  }
