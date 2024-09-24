@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+import random
+
+curses = ["May your socks always be slightly wet",
+          "May you always feel like you're forgetting something important",
+          "May your phone charger only work at a specific angle",
+          "I hope they make weird porn of your favorite character that isn't your kink",
+          "I hope they give your favorite character an unsatisfying off screen death",
+          "I hope you microwave stops working",
+          "I hope you get that intense need to pee right before something important",
+          "May your coworker heat up tuna in the break room microwave for a full week",
+          "May you run out of toilet paper in an empty public bathroom after a dump",
+          "May your next sexy times ends with not finishing",
+          "I hope you sneeze and shit yourself",
+          "I hope you will step on a lego with bare feet",
+          "May your sleeves roll down and get wet while washing your hands",
+          "May your pillow be too warm on every side",
+          "May your blanket be too short this winter",
+          "May you stump your little pinkie on a table's corner and stump it again right before healing",
+          "May your back scratch at an unreachable spot",
+          "May you always get the feeling you have to sneeze without actually sneezing",
+          "May your mattress be smelly",
+          "May you bump into the door when you get up in the middle of the night",
+          "May your USB never fits first try",
+          "I hope you slee get caught by the door handle",
+          "I hope a slow walker walks in front of you when you're already running late",
+          "I hope your finger print sensor gets dirty",
+          "May all traffic lights always be red",
+          "I hope the pages of your favorite book stick together",
+          "May your computer reboot when you least expect it",
+          "May your pants always be a little bit too short",
+          "I hope your pain dries out",
+          "May you have parsil between your teeth",
+          "I hope your entire digital libray gets deleted",
+          "I hope all your accounts log out and you forget your passwords",
+          "I hope your favourite Youtube video gets taken down",
+          "I hope your sandwich get soggy",
+          "May your fries never be crispy",
+          "May your coffee either too hot or not enough",
+          "May all your bacon burn",
+          "May it perpetually feel like food is caught between your teeth",
+          "May the floss break and the corn stay stuck in your teeth",
+          "May no one swipe right on you",
+          "May your breakast's cereal always soggy",
+          "May your phone rings while you are showering",
+          "May your pants dropped at the most inconvenient time",
+          "May you burp while speaking in public",
+          "May your powerpoint presentation bug",
+          "May you fail every new dish you try to cook",
+          "May you miss your bus stop",
+          "I hope you trip infront of a group of people",
+          "I hope you hair brush breaks",
+          "May you cat chews on your toothbrush",
+          "May you get caught in the rain right after your hair was styled",
+          "I hope you fart while cuddling",
+          "May your left earphone stop functionning",
+          "May you touch wet food while washing your dishes",
+          "May a mosquitoe buzz at your ear all night",
+          "May a fly land on your skin very early in the morning on your free day",
+          "May you step in something wet every time you walk around in socks",
+          "may you never be able to find that one song you liked ever again"]
+
+prefixes = ["Dumb", "Scum", "Douche", "Shit", "Dick", "Fuck", "Dip", "Ass", "Dog", "Lib", "Butt", "Cock", "Dirt", "Bum", "Trump", "Twat", "Cum", "Piss", "Wank", "Poop"]
+suffixes = ["ass", "bag", "shit", "head", "hat", "tard", "fuck", "lord", "wit", "face", "wad", "sucker", "boy", "stain", "stick", "nozzle", "clown", "waffle", "nugget", "gobelin"]
+
+name = random.choice(prefixes) + random.choice(suffixes)
+curses = random.choice(curses)
+
+print(" {}, you {}!".format(curses, name))
+    
