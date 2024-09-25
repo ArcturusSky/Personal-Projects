@@ -2,19 +2,78 @@
     "name": "doctest-style-extension",
     "displayName": "Doctest Style Extension",
     "description": "My Own Colors for doctest files",
-    "version": "0.0.1",
+    "version": "0.0.4",
+    "license": "MIT",
+    "author": "ArcturusSky",
+    "publisher": "ArcturusSky",
     "repository": {
       "type": "git",
-      "url": "https://github.com/ArcturusSky/doctest-style-extension.git"
+      "url": "https://github.com/ArcturusSky/Personal-Projects.git",
+      "directory": "doctest-style-extension"
+    },
+    "bugs": {
+      "url": "https://github.com/ArcturusSky/Personal-Projects/issues"
+    },
+    "homepage": "https://github.com/ArcturusSky/Personal-Projects/tree/main/doctest-style-extension#readme",
+    "icon": "images/icon.png",
+    "galleryBanner": {
+      "color": "#C80000",
+      "theme": "dark"
+    },
+    "engines": {
+      "vscode": "^1.60.0"
     },
     "categories": [
-      "Programming Languages"
+      "Programming Languages",
+      "Themes"
     ],
+    "keywords": [
+      "doctest",
+      "syntax highlighting",
+      "theme",
+      "colours",
+      "colors",
+      "comments",
+      "visual",
+      "test"
+    ],
+    "activationEvents": [
+      "onLanguage:plaintext"
+    ],
+    "main": "./extension/out/extension.js",
     "contributes": {
+      "commands": [
+        {
+          "command": "extension.enableDoctestStyle",
+          "title": "Enable Doctest Style",
+          "icon": "$(symbol-color)"
+        }
+      ],
+      "menus": {
+        "editor/title": [
+          {
+            "when": "resourceLangId == plaintext",
+            "command": "extension.enableDoctestStyle",
+            "group": "navigation"
+          }
+        ]
+      },
+      "configuration": {
+        "title": "Doctest Style Extension",
+        "properties": {
+          "doctestStyle.applyTo": {
+            "type": "string",
+            "enum": ["allTxtFiles", "testsFolder", "disabled"],
+            "default": "testsFolder",
+            "description": "Specifies where to apply the Doctest language."
+          }
+        }
+      },
       "languages": [{
         "id": "doctest",
         "aliases": ["Doctest", "doctest"],
-        "extensions": [".txt"]
+        "extensions": [".txt"],
+        "configuration": "./language-configuration.json"
       }],
       "grammars": [{
         "language": "doctest",
@@ -26,5 +85,14 @@
         "uiTheme": "vs-dark",
         "path": "./themes/doctest-style-color-theme.json"
       }]
-    }
-  }
+    },
+    "qna": "marketplace",
+    "badges": [
+      {
+        "url": "https://img.shields.io/badge/License-MIT-yellow.svg",
+        "href": "https://opensource.org/licenses/MIT",
+        "description": "MIT License"
+      }
+    ],
+    "preview": true
+}

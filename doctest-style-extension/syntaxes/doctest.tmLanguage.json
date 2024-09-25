@@ -1,47 +1,110 @@
 {
     "scopeName": "text.plain.doctest",
-    "name": "Doctest with style",
+    "name": "Doctest",
     "fileTypes": ["txt"],
-   "patterns": [
-    {
-      "match": "\\*\\*(.+?)\\*\\*",
-      "captures": {
-        "1": {"name": "markup.bold"}
-      }
-    },
-    {
-      "match": "\\*(.+?)\\*",
-      "captures": {
-        "1": {"name": "markup.italic"}
-      }
-    },
-    {
-      "match": "^#\\s+#\\s+(.+)$",
-      "captures": {
-        "1": {"name": "markup.heading.1"}
-      }
-    },
-    {
-      "match": "^#\\s+##\\s+(.+)$",
-      "captures": {
-        "1": {"name": "markup.heading.2"}
-      }
-    },
-    {
-      "match": "^#\\s+###\\s+(.+)$",
-      "captures": {
-        "1": {"name": "markup.heading.3"}
-      }
-    },
-    {
-      "match": "^#\\s+(.+)$",
-      "captures": {
-        "1": {"name": "comment"}
-      }
-    },
-    {
-      "match": "\\b\\w*error\\w*\\b",
-      "name": "keyword.other.error"
+    "patterns": [
+        {
+            "match": "^(>>>|\\.\\.\\.)\\s*",
+            "name": "keyword.control.doctest.prompt"
+        },
+        {
+            "begin": "^(>>>|\\.\\.\\.)\\s*",
+            "end": "$",
+            "beginCaptures": {
+                "1": {"name": "keyword.control.doctest.prompt"}
+            },
+            "patterns": [
+                {"include": "#python-code"}
+            ]
+        },
+        {
+            "match": "^(?!(>>>|\\.\\.\\.))(.*)",
+            "captures": {
+                "1": {"name": "string.quoted.single.doctest.output"}
+            }
+        },
+        {
+            "match": "\\*\\*(.+?)\\*\\*",
+            "captures": {
+                "1": {"name": "markup.bold.doctest"}
+            }
+        },
+        {
+            "match": "\\*(.+?)\\*",
+            "captures": {
+                "1": {"name": "markup.italic.doctest"}
+            }
+        },
+        {
+            "match": "^#\\s+#\\s+(.+)$",
+            "captures": {
+                "1": {"name": "markup.heading.1.doctest"}
+            }
+        },
+        {
+            "match": "^#\\s+##\\s+(.+)$",
+            "captures": {
+                "1": {"name": "markup.heading.2.doctest"}
+            }
+        },
+        {
+            "match": "^#\\s+###\\s+(.+)$",
+            "captures": {
+                "1": {"name": "markup.heading.3.doctest"}
+            }
+        },
+        {
+            "match": "^#\\s+(.+)$",
+            "captures": {
+                "1": {"name": "comment.line.number-sign.doctest"}
+            }
+        },
+        {
+            "begin": "^Traceback \\(most recent call last\\):",
+            "end": "^\\S(?!^Traceback)",
+            "name": "message.error.doctest",
+            "patterns": [
+                {
+                    "match": "^\\s+File \"(.+)\", line (\\d+), in (.+)",
+                    "captures": {
+                        "1": {"name": "entity.name.filename.doctest"},
+                        "2": {"name": "constant.numeric.integer.doctest"},
+                        "3": {"name": "entity.name.function.doctest"}
+                    }
+                }
+            ]
+        }
+    ],
+    "repository": {
+        "python-code": {
+            "patterns": [
+                {
+                    "match": "\\b(def|class|import|from|as|return|if|elif|else|for|while|try|except|finally|with|in|is|not|and|or)\\b",
+                    "name": "keyword.control.flow.python"
+                },
+                {
+                    "match": "'(?:[^'\\\\]|\\\\.)*'|\"(?:[^\"\\\\]|\\\\.)*\"",
+                    "name": "string.quoted.python"
+                },
+                {
+                    "match": "\\b\\d+(\\.\\d+)?\\b",
+                    "name": "constant.numeric.python"
+                },
+                {
+                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(",
+                    "captures": {
+                        "1": {"name": "entity.name.function.python"}
+                    }
+                },
+                {
+                    "match": "\\b(True|False|None)\\b",
+                    "name": "constant.language.python"
+                },
+                {
+                    "match": "\\b(self|cls)\\b",
+                    "name": "variable.language.python"
+                }
+            ]
+        }
     }
-  ]
 }

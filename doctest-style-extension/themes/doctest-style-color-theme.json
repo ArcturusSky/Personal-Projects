@@ -1,57 +1,82 @@
 {
-    "name": "Doctest with style",
-    "colors": {},
+    "name": "Doctest with Style",
+    "type": "dark",
+    "colors": {
+        "editor.foreground": "#D4D4D4",
+        "editor.background": "#1E1E1E",
+        "editorCursor.foreground": "#FFFFFF",
+        "editor.lineHighlightBackground": "#2A2A2A",
+        "editorLineNumber.foreground": "#858585"
+    },
     "tokenColors": [
-      {
-        "scope": "text.plain",
-        "settings": {
-          "foreground": "#FFFFFF"
+        {
+            "scope": "keyword.control.doctest.prompt",
+            "settings": {
+                "foreground": "#569CD6" // Bright blue for prompt (>>>)
+            }
+        },
+        {
+            "scope": "markup.heading.1.doctest",
+            "settings": {
+                "foreground": "#FFD700", // Gold text
+                "fontStyle": "bold italic underline" // Bold, italic, and underline for Heading 1
+            }
+        },
+        {
+            "scope": "markup.heading.2.doctest",
+            "settings": {
+                "foreground": "#FFD700", // Gold text
+                "fontStyle": "bold italic" // Bold and italic for Heading 2
+            }
+        },
+        {
+            "scope": "markup.heading.3.doctest",
+            "settings": {
+                "foreground": "#FFD700", // Gold text
+                "fontStyle": "italic" // Italic for Heading 3
+            }
+        },
+        {
+            "scope": "comment.line.number-sign.doctest",
+            "settings": {
+                "foreground": "#6A9955" // Green for comments
+            }
+        },
+        {
+            "scope": "keyword.control.flow.python",
+            "settings": {
+                "foreground": "#C586C0" // Purple for keywords
+            }
+        },
+        {
+            "scope": "string.quoted.python",
+            "settings": {
+                "foreground": "#CE9178" // Soft orange for strings
+            }
+        },
+        {
+            "scope": "constant.numeric.python",
+            "settings": {
+                "foreground": "#B5CEA8" // Light green for numbers
+            }
+        },
+        {
+            "scope": "entity.name.function.python",
+            "settings": {
+                "foreground": "#DCDCAA" // Light yellow for function names
+            }
+        },
+        {
+            "scope": "message.error.doctest",
+            "settings": {
+                "foreground": "#F44747" // Bright red for error messages
+            }
+        },
+        {
+            "scope": "string.quoted.single.doctest.output",
+            "settings": {
+                "foreground": "#FFFF00" // Bright yellow for expected output
+            }
         }
-      },
-      {
-        "scope": "text.plain markup.bold",
-        "settings": {
-          "fontStyle": "bold"
-        }
-      },
-      {
-        "scope": "text.plain markup.italic",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      },
-      {
-        "scope": "text.plain comment",
-        "settings": {
-          "foreground": "#6A9955"
-        }
-      },
-      {
-        "scope": "text.plain markup.heading.1",
-        "settings": {
-          "foreground": "#6A9955",
-          "fontStyle": "bold"
-        }
-      },
-      {
-        "scope": "text.plain markup.heading.2",
-        "settings": {
-          "foreground": "#6A9955",
-          "fontStyle": "bold"
-        }
-      },
-      {
-        "scope": "text.plain markup.heading.3",
-        "settings": {
-          "foreground": "#6A9955",
-          "fontStyle": "bold"
-        }
-      },
-      {
-        "scope": "text.plain keyword.other.error",
-        "settings": {
-          "foreground": "#F44747"
-        }
-      }
     ]
-  }
+}
