@@ -49,8 +49,7 @@
       - [5.3 Examples](#53-examples)
         - [5.3.1 Passing Immutable Objects](#531-passing-immutable-objects)
         - [5.4.2 Passing Mutable Objects](#542-passing-mutable-objects)
-      - [5.4 Memory Scheme to illustrate how arguments are passed to functions](#54-memory-scheme-to-illustrate-how-arguments-are-passed-to-functions)
-      - [5.3 Memory Scheme to illustrate how arguments are passed to functions](#53-memory-scheme-to-illustrate-how-arguments-are-passed-to-functions)
+      - [5.5 Memory Scheme to illustrate how arguments are passed to functions](#55-memory-scheme-to-illustrate-how-arguments-are-passed-to-functions)
 
 
 ## Introduction
@@ -384,9 +383,7 @@ print(example_list)  # Outputs: [1, 2, 3, 4]
 **Breakdown:**  
 - The `modify_list` function alters `example_list` in-place because `lists` are **mutable**.
 
-#### 5.4 Memory Scheme to illustrate how arguments are passed to functions
-
-#### 5.3 Memory Scheme to illustrate how arguments are passed to functions
+#### 5.5 Memory Scheme to illustrate how arguments are passed to functions
 
 
 ```python
