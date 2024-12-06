@@ -32,7 +32,7 @@
       - [3.5 Special Cases:](#35-special-cases)
         - [3.5.1 Tuple](#351-tuple)
         - [3.5.2 Frozenset](#352-frozenset)
-        - [3.5.3 `NSMALLPOSINTS` and `NSMALLNEGINTS`](#353-nsmallposints-and-nsmallnegints)
+        - [3.5.3 `NSMALLPOSINTS`, `NSMALLNEGINTS` and Pre-allocated Integers](#353-nsmallposints-nsmallnegints-and-pre-allocated-integers)
       - [3.6 Basic Syntax](#36-basic-syntax)
       - [3.7 Examples](#37-examples)
         - [3.7.1 Immutability in Strings](#371-immutability-in-strings)
@@ -221,13 +221,15 @@ Use **immutability** to ensure objects remain **unchanged**, even when shared ac
   
     Same as a `set` but... frozen. (and not *"Let it go"*)
 
-##### 3.5.3 `NSMALLPOSINTS` and `NSMALLNEGINTS`
+##### 3.5.3 `NSMALLPOSINTS`, `NSMALLNEGINTS` and Pre-allocated Integers
 
 `NSMALLPOSINTS` and `NSMALLNEGINTS` are internal constants used by CPython (the most common implementation of Python) to define the range of small integers that Python caches for performance optimization.
 
 - **`NSMALLPOSINTS`**: Specifies the number of small **positive integers** (starting from 0) that are cached. By default, this includes integers from `0` to `256`.
 
 - **`NSMALLNEGINTS`**: Specifies the number of small **negative integers** (starting from `-1` and going downward) that are cached. By default, this includes integers from `-1` to `-5`.
+
+- **Pre-allocated Integers** When CPython starts, it pre-allocates memory for the integers in this range (-5 to 256). This means these 262 integers are ready for immediate use during the program's execution, avoiding the overhead of creating and destroying integer objects repeatedly.
 
 **Why is this done?**
 Caching these frequently used integers saves memory and speeds up execution because Python reuses the same object instead of creating new ones every time such integers are referenced.
@@ -316,7 +318,7 @@ b ----                    |     y --------->| "hello!" |
   
 - **Referencing:** This refers to when two variables point to the **same object** in memory. They don’t need explicit assignment but are implicitly referencing the same data (e.g., through functions or data structures like lists).
 
- 
+- **Alias:** An alias is created when two or more variable names reference the same object. Modifying the object through any alias affects the original object, as all aliases share the same memory location.
 
 ```python
 example_list = [1, 2, 3]
