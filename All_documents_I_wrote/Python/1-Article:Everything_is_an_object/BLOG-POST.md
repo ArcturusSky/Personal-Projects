@@ -1,5 +1,7 @@
 # Everything is an object!
 
+!["Everythis is an object, a student's perspective](everything_is_object.png)
+
 ## Summary
 - [Everything is an object!](#everything-is-an-object)
   - [Summary](#summary)
